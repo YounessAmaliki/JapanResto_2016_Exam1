@@ -61,7 +61,6 @@ function buildOutput(){
 	});
 }
 
-
 function editDoc(id, rev, meal, amount, tablenumber, remarks, datestring, flag){
 	
 	$('#output').hide();
@@ -80,7 +79,7 @@ function editDoc(id, rev, meal, amount, tablenumber, remarks, datestring, flag){
 }
 
 
-function updateDoc(datestring){
+function updateDoc(){
 	
 	var id = $("#_id").val();
 	var rev = $("#_rev").val();
@@ -89,6 +88,7 @@ function updateDoc(datestring){
 	var amount = $("#amount").val();
 	var tablenumber = $("#tablenumber").val();
 	var remarks = $("#remarks").val();
+	var datestring =  $("#datestring").val();
 	
 
 
@@ -122,3 +122,5 @@ function updateDoc(datestring){
 		}
 	});
 }
+
+
