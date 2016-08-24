@@ -1,29 +1,60 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My New CouchApp</title>
-    <link rel="stylesheet" href="style/main.css" type="text/css">
+    <title>Orders</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+    <script src='scripts/jquery.js'></script>
+    <script src='scripts/couch.js'></script>
   </head>
   <body>
-    <div id="account"></div>
-
-    <h1>Generated CouchApp</h1>
-
-    <div id="profile"></div>
-    <div id="items"></div>
-
-    <div id="sidebar">
-      <p>Edit welcome message.</p>
-      <p>Ideas: You could easily turn this into a photo sharing app, or a grocery list, or a chat room.</p>
-    </div>
+    	<center>
+		<table border="1" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<table>
+					<tr>
+					<td colspan="3" align="center">
+					<h2>Add Order</h2></td>
+					</tr>
+					<tr>
+					<td colspan="3">&nbsp;</td>
+					</tr>
+					<tr>
+					<td>Meal :</td><td><select id="ddlViewBy">
+					  <option value="1">Sushi</option>
+					  <option value="2">Sashimi</option>
+					  <option value="3">Shabu Shabu</option>
+					  <option value="3">Sukiyaki</option>
+					  <option value="3">Nikujaga</option>
+					  <option value="3">Tonkatsu</option>
+					</select></td>
+					</tr>
+					<tr>
+					<td>Amount:</td><td><input id="amount" type="text" size="50"></td>
+					</tr>
+					<tr>
+					<td>Table number:</td><td><input id="tablenumber" type="text" size="10"></td>
+					</tr>
+					<tr>
+					<td>Remarks:</td><td><input id="remarks" type="text" size="10"></td>
+					</tr>
+					<tr>
+					<td>Date:</td><td> <input type="text" id="date" size="10"></td>
+					</tr>
+					<tr>
+					<td>Hour:</td><td><input type="text" id="hour" size="10"></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+						<button onclick='createDoc()'>Ok</button>
+						</td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<br/>
+		<div id='output'></div>
+		</center>
   </body>
-  <script src="vendor/couchapp/loader.js"></script>
-  <script type="text/javascript" charset="utf-8">
-    $.couch.app(function(app) {
-      $("#account").evently("account", app);
-      $("#profile").evently("profile", app);
-      $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
-      $("#items").evently("items", app);
-    });
-  </script>
 </html>
